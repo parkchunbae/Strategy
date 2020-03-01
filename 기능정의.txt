@@ -1,0 +1,15 @@
+### 기본설정
+1. 시작일 선정(양쪽다 데이터가 있는 최소값)
+2. 변수리스트
+-> tlt, qqq, result
+    result(date, phase, returnRate, balance, qqqPosition, tltPosition, taxSum, fee)
+3. 상수(세팅값)리스트() 선언후 바뀌지 않는 변수
+->  phase = 1(0,1,2,3), 
+    sellFee = 0.002, 
+    buyFee = 0.002,
+    taxRate = 0.22,
+    taxSum = 0,
+    (phase0Cnt = 0, phase1Period = 1m, phase1ThresholdRate = 2, phase1QqqPosition = 1, phase1TltPosition = 0) 
+    phase1Cnt = 1, phase1Period = 1m, phase1ThresholdRate = 2, phase1QqqPosition = 0.9, phase1TltPosition = 0.1,
+    phase2Cnt = 1, phase2Period = 1m, phase2ThresholdRate = 3, phase2QqqPosition = 0, phase2TltPosition = 1,
+    phase3Cnt = 4, phase3Period = 2m, phase3ThresholdRate = 3, phase3QqqPosition = 0, phase3TltPosition = 1

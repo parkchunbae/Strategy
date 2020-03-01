@@ -1,0 +1,40 @@
+클래스를 만들어
+
+1. 페이즈 클래스
+phaseNum
+phase1Cnt
+phase1Period
+phase1ThresholdRate
+phase1QqqPosition
+phase1TltPosition
+
+2. result 클래스
+resultNum
+date
+phase
+returnRate
+balance
+qqqPosition
+tltPosition
+taxSum
+fee
+
+
+
+CONFIG = {
+	sellFee : '',
+
+
+	phaseList : [
+		{
+			phaseNum : 1,
+			phaseCnt : 1
+		},
+		{
+			phaseNum : 2,
+			phaseCnt : 2
+		}	
+	]
+}
+
+CONFIG['phaseList'][0]['phaseCnt']  1
