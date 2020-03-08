@@ -1,0 +1,9 @@
+1. qqq / tlt 의 가장 오래된 날짜 구하기 (max/min)
+
+qqq.max(Date)
+
+2. qqq / tlt 최대 수익률 최소 수익률 구하기 (max/min)
+
+3. 2020년의 최대 수익률 최소 수익률 구하기 (loc/max/min/==)
+
+4. CONFIG 의 페이즈들의 qqqposition/tlt 합계를 구하시오

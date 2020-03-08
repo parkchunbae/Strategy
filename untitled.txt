@@ -1,0 +1,59 @@
+1. 일자별 수익률을 합침 각각을 더해서 수익률을 만들수 있다.
+
+
+
+1. * 현 페이즈를 판단한다.(몇단계)
+
+    
+
+2. 수익률을 채택한다. 
+
+3. 랜덤페이즈 설정 (*3) 정수화
+
+4. shape갯수만큼 반복 해서 프린트하기
+
+5. 프린트한것의 리스트만들기
+
+5. datasum 의 phase 컬럼 만들기
+
+
+
+
+6. 페이즈가 x일때 수익률 구하기
+
+    6-1 for 1줄씩
+    for i in dataSum['phase']:
+    [
+         for i in CONFIG['phaseList']:
+            if phase == i:
+                dataSum['choiceRate'].loc(i) = 
+                phaseQqqPosition * dataSum['qqqR'] + phaseTltPosition * dataSum['tltR']
+    ]
+    
+    
+    6-2
+    choiceRateValue = 0
+    
+        6-2-1
+        for i in CONFIG['phaseList']:
+            if phase == i:
+                choiceRateValue = qqqPo * dataSumqqqR + tltPo * tltR
+                
+    
+        6-2-2
+        if phase == 1:
+            choiceRateValue = settingValue
+        else if phase ==2:
+            choiceRateValue = settingValue
+        else:
+            choiceRateValue = settingValue
+    
+    6-3 한줄마다. 인덱스
+    dataSum['choiceRate'].loc(i) = ??
+    dataSum['choiceRate'] = choiceRateList
+
+ 
+for i in range(10):
+    a.append(0)    # append로 요소 추가
+ 
+print(a)
