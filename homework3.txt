@@ -1,0 +1,127 @@
+1. 일자별 수익률을 합침 각각을 더해서 수익률을 만들수 있다.
+
+
+
+1. * 현 페이즈를 판단한다.(몇단계)
+NASDAQ 지수 -3% 발생시 TLT 1개월 보유후 나스닥으로 전환
+도중에 -3% 발생시 1개월 추가 1 
+
+나스닥 지수 -2% 발생시 10%만 TLT 1개월 보유후 나스닥으로 전환
+도중에 -2% 발생시 1개월 추가 2 
+
+한달내 -3% 4번 발생시 TLT 2개월 보유후 나스닥으로 전환인데
+도중에 -3% 발생시 2개월 추가 3 
+
+
+ㄱ. 한달내 지수 발생이력 분기처리
+    이력이 없는것 x 0
+ㄷ. 한달내 지수 카운트
+
+ㄴ. 반환
+
+'phaseList' : [
+        {
+			'phaseNum' : 0,
+            'phaseQqqPosition' : 1,
+            'phaseTltPosition' : 0
+		},
+		{
+			'phaseNum' : 1,
+			'phaseCnt' : 1,
+            'phasePeriodNum' : 1,
+            'phasePeriodType' : 'm',
+            'phaseThresholdRate' : 2,
+            'phaseQqqPosition' : 0.1,
+            'phaseTltPosition' : 0.9
+		},
+    
+
+2. 수익률을 채택한다. 
+
+3. 랜덤페이즈 설정 (*3) 정수화
+
+4. shape갯수만큼 반복 해서 프린트하기
+
+5. 프린트한것의 리스트만들기
+
+5. datasum 의 phase 컬럼 만들기
+
+
+
+
+6. 페이즈가 x일때 수익률 구하기
+
+    6-1 for 1줄씩
+    for i in dataSum['phase']:
+    [
+         for i in CONFIG['phaseList']:
+            if phase == i:
+                dataSum['choiceRate'].loc(i) = phaseQqqPosition * dataSum['qqqR'] + phaseTltPosition * dataSum['tltR']
+    ]
+    
+    
+    6-2
+    choiceRateValue = 0
+    
+        6-2-1
+        for i in CONFIG['phaseList']:
+            if phase == i:
+                choiceRateValue = qqqPo * dataSumqqqR + tltPo * tltR
+                
+    
+        6-2-2
+        if phase == 1:
+            choiceRateValue = settingValue
+        else if phase ==2:
+            choiceRateValue = settingValue
+        else:
+            choiceRateValue = settingValue
+    
+    6-3 한줄마다. 인덱스
+    dataSum['choiceRate'].loc(i) = ??
+    dataSum['choiceRate'] = choiceRateList
+
+ 
+for i in range(10):
+    a.append(0)    # append로 요소 추가
+ 
+print(a)
+
+
+
+
+
+CONFIG = {
+	'sellFee' : 0.002,
+    'buyFee' : 0.002,
+    'taxRate' : 0.22,
+	'phaseList' : [
+		{
+			'phaseNum' : 1,
+			'phaseCnt' : 1,
+            'phasePeriodNum' : 1,
+            'phasePeriodType' : 'm',
+            'phaseThresholdRate' : 2,
+            'phaseQqqPosition' : 0.1,
+            'phaseTltPosition' : 0.9
+		},
+		{
+			'phaseNum' : 2,
+			'phaseCnt' : 1,
+            'phasePeriodNum' : 1,
+            'phasePeriodType' : 'm',
+            'phaseThresholdRate' : 3,
+            'phaseQqqPosition' : 0,
+            'phaseTltPosition' : 1
+		},
+        {
+            'phaseNum' : 3,
+            'phaseCnt' : 4,
+            'phasePeriodNum' : 2,
+            'phasePeriodType' : 'm',
+            'phaseThresholdRate' : 3,
+            'phaseQqqPosition' : 0,
+            'phaseTltPosition' : 1
+        }
+	]
+}
